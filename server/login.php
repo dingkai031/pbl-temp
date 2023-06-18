@@ -24,8 +24,9 @@ if (mysqli_num_rows($result) > 0) {
     $user_data = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
     if (password_verify($password, $user_data['password'])) {
         $_SESSION['id'] = $user_data['user_id'];
+        if ($user_data['id_mahasiswa'] != "") $_SESSION['id_mahasiswa'] = $user_data['id_mahasiswa'];
+        if ($user_data['id_perusahaan'] != "") $_SESSION['id_perusahaan'] = $user_data['id_perusahaan'];
         $_SESSION['username'] = $user_data['username'];
-        // $_SESSION['full_name'] = $user_data['full_name'];
         $_SESSION['email'] = $user_data['email'];
         $_SESSION['level'] = $user_data['level'];
         die(json_encode(['status' => "success", "message" => "login success"]));
