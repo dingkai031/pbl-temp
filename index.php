@@ -16,9 +16,11 @@ $page_array[2] = "alumni";
 $page_array[3] = "perusahaan";
 $page_array[4] = "export-kuesioner";
 $page_array[5] = "kuesioner-awal";
-$page_array[6] = "kuesioner-lanjutan";
+$page_array[6] = "kuesioner-lanjutan-intro";
 $page_array[7] = "riwayat-kerja";
 $page_array[8] = "lowongan-kerja";
+$page_array[9] = "kuesioner-perusahaan";
+$page_array[10] = "lowongan-kerjaan-perusahaan";
 $page_array[400] = "logout";
 
 if ("" == $params[0]) {
@@ -46,7 +48,11 @@ switch ($select_index_id) {
           ];
           pageBuilder("admin/home.php", "admin", $data);
         }elseif($_SESSION['level'] === "2") {
-          
+          $data = [
+            "page-name" => WEBSITE_NAME." - PERUSAHAAN",
+            "page" => "home"
+          ];
+          pageBuilder("perusahaan/home.php", "perusahaan", $data);
         }elseif($_SESSION['level'] === "3") {
           $data = [
             "page-name" => WEBSITE_NAME." - ALUMNI",
@@ -139,11 +145,18 @@ switch ($select_index_id) {
   case 6 :
     Router::get(function() use($mysqlOutput){
       routeGuard('3', function() use($mysqlOutput){
+        $findNextKuesioner = $mysqlOutput('SELECT id_kuesioner FROM kuesioner WHERE JSON_EXTRACT(jawaban_kuesioner, "$.kuesioner_lanjutan") IS NOT NULL');
+        if (count($findNextKuesioner) > 0) {
+          $isDoneFillingSecondSurvey = true;
+        }else {
+          $isDoneFillingSecondSurvey = false;
+        }
         $data = [
           "page-name" => WEBSITE_NAME." - KUESIONER LANJUTAN",
-          "page" => "kuesioner-lanjutan",
+          "page" => "kuesioner-lanjutan-intro",
+          "done-second-survey" => $isDoneFillingSecondSurvey
         ];
-        pageBuilder("alumni/kuesioner-lanjutan.php", "alumni", $data);
+        pageBuilder("alumni/kuesioner-lanjutan-intro.php", "alumni", $data);
       });
     });
     break;
@@ -168,6 +181,30 @@ switch ($select_index_id) {
       });
     });
     break;
+//     "kuesioner-perusahaan" ? "b
+// "lowongan-kerjaan-perusaan"
+  case 9 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('2', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Kuesioner",
+          "page" => "kuesioner-perusahaan",
+        ];
+        pageBuilder("perusahaan/kuesioner-perusahaan.php", "perusahaan", $data);
+      });
+    });
+    break;
+  case 10 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('2', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Lowongan",
+          "page" => "lowongan-kerjaan-perusahaan",
+        ];
+        pageBuilder("perusahaan/lowongan-kerjaan-perusahaan.php", "perusahaan", $data);
+      });
+    });
+    break;
   case 400:
     session_destroy();
     PHPRedirect(ROOT_URL);
@@ -176,9 +213,3 @@ switch ($select_index_id) {
     http_response_code(404);
     echo "url not found";
 }
-
-
-
-?>
- 
-
