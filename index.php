@@ -116,7 +116,7 @@ switch ($select_index_id) {
         die();
       }
     });
-    Router::post(function() use($koneksi) {
+    Router::post(function() use($koneksi, $mysqlOutput) {
       if (!isLoggedIn()) {
         require_once('server/add-kuesioner-1.php');
       }else {

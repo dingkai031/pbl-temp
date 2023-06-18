@@ -40,9 +40,22 @@ function routeGuard(int $level, $cb):void {
     $cb();
 }
 
+function escapeNestedArray($array) {
+    foreach ($array as &$value) {
+        if (is_array($value)) {
+            $value = escapeNestedArray($value);
+        } else {
+            $value = htmlspecialchars($value);
+        }
+    }
+    unset($value);
+    return $array;
+}
+
 $mysqlOutput = function (string $query) use($koneksi) {
     try {
         $result = mysqli_query($koneksi, $query);
+        if (is_bool($result)) return $result;
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }catch (Exception $e) {
         return mysqli_error($koneksi);

@@ -12,28 +12,21 @@ if ($contentType !== "application/json")
 
 $content = trim(file_get_contents("php://input"));
 $decoded = json_decode($content, true);
+$decoded_escaped = escapeNestedArray($decoded);
+$all_answer = $decoded_escaped['allAnswer'];
+// check apakah nim terdaftar
+$id_mahasiswa_result = $mysqlOutput("SELECT id_mahasiswa from mahasiswa WHERE nim='".$decoded_escaped['nim']."'");
+if (count($id_mahasiswa_result) === 0) die(json_encode(['status' => 'error', 'pesan' => 'NIM tidak ditemukan harap periksa kembali NIM Anda']));
 
-die(json_encode(['MASUK']));
+// check apakah mahasiswa sudah mengisi kuesioner awal
+$id_mahasiswa = $id_mahasiswa_result[0]['id_mahasiswa'];
+$id_kuesioner_result = $mysqlOutput("SELECT id_kuesioner from kuesioner WHERE id_mahasiswa='".$id_mahasiswa."'");
+if (count($id_kuesioner_result) !== 0) die(json_encode(['status' => 'error', 'pesan' => 'Anda sudah mengisi kuesioner silahkan login']));
 
-$username = mysqli_escape_string($koneksi, trim($decoded['username']));
-$password = mysqli_escape_string($koneksi, $decoded['password']);
+// tambahkan hasil kuesioner ke database
+$mysqlOutput("INSERT INTO kuesioner (id_mahasiswa, jawaban_kuesioner, created_at, updated_at) VALUE ('$id_mahasiswa', '".json_encode(['kuesioner_awal' => $all_answer])."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
 
-// find user in the database
-$query_find_user = "SELECT * FROM user WHERE username='$username'";
-$result = mysqli_query($koneksi, $query_find_user);
+// tambahkan user alumni ke database
+$mysqlOutput("INSERT INTO user (id_mahasiswa, username, password, email, level, created_at, updated_at) VALUES ('$id_mahasiswa', '".$decoded_escaped['username']."', '".password_hash($decoded_escaped['password'], PASSWORD_BCRYPT)."', '".$decoded_escaped['email']."', '3', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
 
-if (mysqli_num_rows($result) > 0) {
-    $user_data = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
-    if (password_verify($password, $user_data['password'])) {
-        $_SESSION['id'] = $user_data['user_id'];
-        $_SESSION['username'] = $user_data['username'];
-        $_SESSION['full_name'] = $user_data['full_name'];
-        $_SESSION['email'] = $user_data['email'];
-        $_SESSION['level'] = $user_data['level'];
-        die(json_encode(['status' => "success", "message" => "login success"]));
-    }else {
-        die(json_encode(['status' => "failed", "message" => "wrong username or password"]));
-    }
-}else {
-    die(json_encode(['status' => "failed", "message" => "wrong username or password"]));
-}
+die(json_encode(['status' => 'success', 'Message' => "Terimakasih karena telah mengisi kuesioner"]));

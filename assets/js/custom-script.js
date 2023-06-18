@@ -1,13 +1,17 @@
 function submitButtonToggle(submitButton) {
-  if (submitButton.disabled) {
-    submitButton.removeAttribute("disabled");
-  } else {
-    submitButton.setAttribute("disabled", "");
+  if (submitButton) {
+    if (submitButton.disabled) {
+      submitButton.removeAttribute("disabled");
+    } else {
+      submitButton.setAttribute("disabled", "");
+    }
+    submitButton
+      .querySelector(".submit-button-spinner")
+      .classList.toggle("d-none");
+    submitButton
+      .querySelector(".submit-button-text")
+      .classList.toggle("d-none");
   }
-  submitButton
-    .querySelector(".submit-button-spinner")
-    .classList.toggle("d-none");
-  submitButton.querySelector(".submit-button-text").classList.toggle("d-none");
 }
 
 async function sendData(url = "", data = {}) {
