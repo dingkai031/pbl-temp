@@ -16,6 +16,9 @@ $page_array[2] = "alumni";
 $page_array[3] = "perusahaan";
 $page_array[4] = "export-kuesioner";
 $page_array[5] = "kuesioner-awal";
+$page_array[6] = "kuesioner-lanjutan";
+$page_array[7] = "riwayat-kerja";
+$page_array[8] = "lowongan-kerja";
 $page_array[400] = "logout";
 
 if ("" == $params[0]) {
@@ -42,6 +45,14 @@ switch ($select_index_id) {
             "page" => "home"
           ];
           pageBuilder("admin/home.php", "admin", $data);
+        }elseif($_SESSION['level'] === "2") {
+          
+        }elseif($_SESSION['level'] === "3") {
+          $data = [
+            "page-name" => WEBSITE_NAME." - ALUMNI",
+            "page" => "home"
+          ];
+          pageBuilder("alumni/home.php", "alumni", $data);
         }
       }else {
         // show home page
@@ -123,6 +134,38 @@ switch ($select_index_id) {
         PHPRedirect(ROOT_URL);
         die();
       }
+    });
+    break;
+  case 6 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - KUESIONER LANJUTAN",
+          "page" => "kuesioner-lanjutan",
+        ];
+        pageBuilder("alumni/kuesioner-lanjutan.php", "alumni", $data);
+      });
+    });
+    break;
+  case 7 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Riwayat Kerja",
+          "page" => "riwayat-kerja",
+        ];
+        pageBuilder("alumni/riwayat-kerja.php", "alumni", $data);
+      });
+    });
+  case 8 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
+          "page" => "lowongan-kerja",
+        ];
+        pageBuilder("alumni/lowongan-kerja.php", "alumni", $data);
+      });
     });
     break;
   case 400:
