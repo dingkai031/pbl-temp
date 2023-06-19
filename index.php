@@ -108,11 +108,22 @@ switch ($select_index_id) {
     });
     break;
   case 3 :
-    Router::get(function(){
-      routeGuard('1', function(){
+    Router::get(function() use($mysqlOutput){
+      routeGuard('1', function() use($mysqlOutput){
+        $userPerusahaan = $mysqlOutput("SELECT * FROM user WHERE level = '2'");
+        $id_perusahaan = array_column($userPerusahaan, 'id_perusahaan');
+        $id_perusahaan_string = implode(",", $id_perusahaan);
+        $perusahaanArray = $mysqlOutput("SELECT * FROM perusahaan WHERE id_perusahaan IN ($id_perusahaan_string)");
+        // sort userPerusahaan and perusahaanArray by id_perusahaan
+        array_multisort($userPerusahaan, SORT_ASC, $id_perusahaan);
+        array_multisort($perusahaanArray, SORT_ASC, array_column($perusahaanArray, 'id_perusahaan'));
+        foreach ($perusahaanArray as $perusahaan_key => $perusahaan) {
+          $perusahaanArray[$perusahaan_key]['user_data'] = $userPerusahaan[$perusahaan_key];
+        }
         $data = [
           "page-name" => WEBSITE_NAME." - PERUSAHAAN",
-          "page" => "perusahaan"
+          "page" => "perusahaan",
+          "perusahaanArray" => $perusahaanArray,
         ];
         pageBuilder("admin/perusahaan.php", "admin", $data);
       });
@@ -197,9 +208,12 @@ switch ($select_index_id) {
   case 10 :
     Router::get(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
+        $id_perusahaan = $_SESSION['id_perusahaan'];
+        $loker = $mysqlOutput("SELECT * from loker WHERE id_perusahaan='$id_perusahaan'");
         $data = [
-          "page-name" => WEBSITE_NAME." - Lowongan",
+          "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
           "page" => "lowongan-kerjaan-perusahaan",
+          "loker" => $loker
         ];
         pageBuilder("perusahaan/lowongan-kerjaan-perusahaan.php", "perusahaan", $data);
       });

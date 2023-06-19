@@ -27,7 +27,7 @@
                                 <td><?= $alumni['email_kampus'] ?></td>
                                 <td><?= $alumni['user_data']['email'] ?></td>
                                 <td><?= $alumni['user_data']['username'] ?></td>
-                                <td class="text-capitalize"><?= $alumni['user_data']['full_name'] ?></td>
+                                <td class="text-capitalize"><?= $alumni['nama_lengkap'] ?></td>
                                 <td><?= $alumni['prodi']?></td>
                                 <td><?= $alumni['alamat']?></td>
                                 <td><?= $alumni['telp']?></td>
