@@ -19,8 +19,9 @@ $page_array[5] = "kuesioner-awal";
 $page_array[6] = "kuesioner-lanjutan-intro";
 $page_array[7] = "riwayat-kerja";
 $page_array[8] = "lowongan-kerja";
-$page_array[9] = "kuesioner-perusahaan";
+$page_array[9] = "kuesioner-perusahaan-intro";
 $page_array[10] = "lowongan-kerjaan-perusahaan";
+$page_array[11] = "kuesioner-perusahaan";
 $page_array[400] = "logout";
 
 if ("" == $params[0]) {
@@ -184,24 +185,31 @@ switch ($select_index_id) {
   case 8 :
     Router::get(function() use($mysqlOutput){
       routeGuard('3', function() use($mysqlOutput){
+        $allLoker = $mysqlOutput("SELECT l.*, p.nama_perusahaan, p.email_perusahaan, p.telp_perusahaan, p.alamat_perusahaan, p.created_at AS p_created_at, p.updated_at as p_updated_at, p.deleted_at as p_deleted_at FROM loker l INNER JOIN perusahaan p on l.id_perusahaan = p.id_perusahaan");
         $data = [
           "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
           "page" => "lowongan-kerja",
+          "allLoker" => $allLoker,
         ];
         pageBuilder("alumni/lowongan-kerja.php", "alumni", $data);
       });
     });
     break;
-//     "kuesioner-perusahaan" ? "b
-// "lowongan-kerjaan-perusaan"
   case 9 :
     Router::get(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
+        $findKuesioner = $mysqlOutput('SELECT id_kuesioner FROM kuesioner WHERE id_perusahaan=\''.$_SESSION['id_perusahaan'].'\'');
+        if (count($findKuesioner) > 0) {
+          $isDoneFillingSurvey = true;
+        }else {
+          $isDoneFillingSurvey = false;
+        }
         $data = [
           "page-name" => WEBSITE_NAME." - Kuesioner",
           "page" => "kuesioner-perusahaan",
+          "done-survey" => $isDoneFillingSurvey
         ];
-        pageBuilder("perusahaan/kuesioner-perusahaan.php", "perusahaan", $data);
+        pageBuilder("perusahaan/kuesioner-perusahaan-intro.php", "perusahaan", $data);
       });
     });
     break;
@@ -216,6 +224,27 @@ switch ($select_index_id) {
           "loker" => $loker
         ];
         pageBuilder("perusahaan/lowongan-kerjaan-perusahaan.php", "perusahaan", $data);
+      });
+    });
+    Router::post(function() use($mysqlOutput){
+      routeGuard('2', function() use($mysqlOutput){
+        require_once "server/add-loker.php";
+      });
+    });
+    break;
+  case 11 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('2', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
+          "page" => "kuesioner-perusahaan",
+        ];
+        pageBuilder("perusahaan/kuesioner-perusahaan.php", "perusahaan", $data);
+      });
+    });
+    Router::post(function() use($mysqlOutput){
+      routeGuard('2', function() use($mysqlOutput){
+        require_once "server/add-loker.php";
       });
     });
     break;

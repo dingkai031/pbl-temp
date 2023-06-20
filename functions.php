@@ -52,6 +52,10 @@ function escapeNestedArray($array) {
     return $array;
 }
 
+function dateToday():string {
+    return date("Y-m-d H:i:s");
+}
+
 $mysqlOutput = function (string $query) use($koneksi) {
     try {
         $result = mysqli_query($koneksi, $query);

@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse justify-content-between" id="admin-menu">
         <div class="navbar-nav">
           <a class="nav-link <?= $data['page'] == "home" ? "btn btn-primary text-white" : "" ?>" href="<?= ROOT_URL ?>">Home</a>
-          <a class="nav-link <?= $data['page'] == "kuesioner-perusahaan" ? "btn btn-primary text-white" : "" ?>" href="<?= ROOT_URL."kuesioner-perusahaan" ?>">Kuesioner</a>
+          <a class="nav-link <?= $data['page'] == "kuesioner-perusahaan-intro" ? "btn btn-primary text-white" : "" ?>" href="<?= ROOT_URL."kuesioner-perusahaan-intro" ?>">Kuesioner</a>
           <a class="nav-link <?= $data['page'] == "lowongan-kerjaan-perusahaan" ? "btn btn-primary text-white" : "" ?>" href="<?= ROOT_URL."lowongan-kerjaan-perusahaan" ?>">Lowongan Kerjaan</a>
         </div>
         <a href="<?= ROOT_URL."logout" ?>" class="btn btn-danger">LOGOUT</a>
