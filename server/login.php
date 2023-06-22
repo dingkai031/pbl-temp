@@ -16,7 +16,7 @@ $decoded = json_decode($content, true);
 $username = mysqli_escape_string($koneksi, trim($decoded['username']));
 $password = mysqli_escape_string($koneksi, $decoded['password']);
 
-// find user in the database
+// cari data user di dalam
 $query_find_user = "SELECT * FROM user WHERE username='$username'";
 $result = mysqli_query($koneksi, $query_find_user);
 

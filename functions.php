@@ -68,12 +68,14 @@ $mysqlOutput = function (string $query) use($koneksi) {
 
 class Router {
     public static function get($cb):void {
+        // GET = Ingin menampilkan halaman website
         if ($_SERVER['REQUEST_METHOD'] === "GET") {
             if (!is_callable($cb)) throw new Exception("Parameter is not function");
             $cb();
         }
     }
     public static function post($cb):void {
+        // ingin memasukkan data ke dalam database
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             if (!is_callable($cb)) throw new Exception("Parameter is not function");
             $cb();

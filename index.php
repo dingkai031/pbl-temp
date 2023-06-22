@@ -2,10 +2,15 @@
 
 include_once("helpers.php");
 
+
+
 $request_raw = $_SERVER['REQUEST_URI'];
 $request_raw = str_replace($htdocs, "", $request_raw);
 
+
+
 $request = explode("?", $request_raw)[0];
+// user/12312312?tanggal=25&bulan=07
 //split the path by '/'
 $params = explode("/", $request);
 // echo ROOT_URL;
@@ -38,7 +43,7 @@ if ("" == $params[0]) {
 if (!$url_identified) $select_index_id = 404;
 
 switch ($select_index_id) {
-  case 0:
+  case 0: //homepage
     Router::get(function(){
       if (isLoggedIn()) {
         // user has loggedin - show levels home page
@@ -175,13 +180,23 @@ switch ($select_index_id) {
   case 7 :
     Router::get(function() use($mysqlOutput){
       routeGuard('3', function() use($mysqlOutput){
+        $allRiwayatKerja = $mysqlOutput("SELECT rk.*, p.nama_perusahaan FROM riwayat_kerja rk INNER JOIN perusahaan p on rk.id_perusahaan = p.id_perusahaan WHERE id_user='".$_SESSION['id']."'");
+        $allPerusahaan = $mysqlOutput("SELECT id_perusahaan, nama_perusahaan FROM perusahaan");
         $data = [
           "page-name" => WEBSITE_NAME." - Riwayat Kerja",
           "page" => "riwayat-kerja",
+          "riwayatKerja" => $allRiwayatKerja,
+          "allPerusahaan" => $allPerusahaan
         ];
         pageBuilder("alumni/riwayat-kerja.php", "alumni", $data);
       });
     });
+    Router::post(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
+        include_once("server/add-riwayat-kerja.php");
+      });
+    });
+    break;
   case 8 :
     Router::get(function() use($mysqlOutput){
       routeGuard('3', function() use($mysqlOutput){
@@ -256,3 +271,4 @@ switch ($select_index_id) {
     http_response_code(404);
     echo "url not found";
 }
+

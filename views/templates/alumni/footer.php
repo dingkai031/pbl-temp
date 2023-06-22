@@ -11,6 +11,7 @@
     </div>
 </footer>
 <script src="<?= ROOT_URL ?>assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?= ROOT_URL ?>assets/js/custom-script.js"></script>
 </body>
 
 </html>

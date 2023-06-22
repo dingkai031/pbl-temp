@@ -15,9 +15,9 @@ if (PRODUCTION_STATE) {
 }else {
     DEFINE("ROOT_URL", "http://" . $root_url_without_http . $htdocs);
 }
+// http://localhost:8080/pbl
 
 // set default timezome
 date_default_timezone_set("Asia/Jakarta");
-
 
 ?>
