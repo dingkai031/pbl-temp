@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2023 at 03:18 PM
+-- Generation Time: Jun 23, 2023 at 04:23 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -136,10 +136,17 @@ CREATE TABLE `riwayat_kerja` (
   `lama_kerja` int(3) NOT NULL,
   `posisi` varchar(40) NOT NULL,
   `penghasilan` int(25) NOT NULL,
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) NOT NULL,
-  `deleted_at` int(11) DEFAULT NULL
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `riwayat_kerja`
+--
+
+INSERT INTO `riwayat_kerja` (`id_riwayat_kerja`, `id_user`, `id_perusahaan`, `lama_kerja`, `posisi`, `penghasilan`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(4, 4, 1, 3, 'manager', 1000000, '2023-06-23 21:06:40', '2023-06-23 21:06:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -249,7 +256,7 @@ ALTER TABLE `perusahaan`
 -- AUTO_INCREMENT for table `riwayat_kerja`
 --
 ALTER TABLE `riwayat_kerja`
-  MODIFY `id_riwayat_kerja` int(7) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_riwayat_kerja` int(7) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
