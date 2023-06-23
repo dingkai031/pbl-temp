@@ -44,7 +44,7 @@ if (!$url_identified) $select_index_id = 404;
 
 switch ($select_index_id) {
   case 0: //homepage
-    Router::get(function(){
+    Router::get(function() use($mysqlOutput){
       if (isLoggedIn()) {
         // user has loggedin - show levels home page
         if ($_SESSION['level'] === "1") {
@@ -60,9 +60,11 @@ switch ($select_index_id) {
           ];
           pageBuilder("perusahaan/home.php", "perusahaan", $data);
         }elseif($_SESSION['level'] === "3") {
+          $getLoggedInAlumniData = $mysqlOutput("SELECT * fROM mahasiswa WHERE id_mahasiswa='".$_SESSION['id_mahasiswa']."'")[0];
           $data = [
             "page-name" => WEBSITE_NAME." - ALUMNI",
-            "page" => "home"
+            "page" => "home",
+            "alumni_data" => $getLoggedInAlumniData
           ];
           pageBuilder("alumni/home.php", "alumni", $data);
         }
