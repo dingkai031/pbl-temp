@@ -50,7 +50,6 @@
                             <th>Posisi</th>
                             <th>Penghasilan</th>
                             <th>Lama Kerja</th>
-                            <th>Tanggal Mulai bekerja</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,10 +57,9 @@
                             <?php foreach ($data['riwayatKerja'] as $riwayatKerja) : ?>
                                 <tr>
                                     <td class="text-capitalize"><?= $riwayatKerja['nama_perusahaan'] ?></td>
-                                    <td><?= $riwayatKerja['jabatan'] ?></td>
+                                    <td><?= $riwayatKerja['posisi'] ?></td>
                                     <td class="text-capitalize"><?= $riwayatKerja['penghasilan'] ?></td>
                                     <td class="text-capitalize"><?= $riwayatKerja['lama_kerja'] ?></td>
-                                    <td><?= $riwayatKerja['created_at'] ?></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
@@ -82,10 +80,16 @@
         const bodyData = {
             'id-perusahaan' : this.querySelector("#perusahaan").value.trim(),
             'lama-kerja' : this.querySelector("#lama-kerja").value.trim(),
-            jabatan : this.querySelector("#jabatan").value.trim(),
+            posisi : this.querySelector("#posisi").value.trim(),
             penghasilan : this.querySelector("#penghasilan").value.trim(),
         };
         sendData("<?= ROOT_URL."riwayat-kerja" ?>", bodyData)
-            .then(res => console.log(res));
+            .then(res => {
+                if (res.status === "success") {
+                    location.reload();
+                }else {
+                    alert(res.message);
+                }
+            });
     })
 </script>
