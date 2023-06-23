@@ -15,7 +15,7 @@ $content = trim(file_get_contents("php://input"));
 $decoded = json_decode($content, true);
 $decoded_escaped = escapeNestedArray($decoded);
 
-// die(json_encode());
+die(json_encode($decoded_escaped));
 
 $query_add_loker = "INSERT INTO loker (id_perusahaan, posisi, tingkat_pengalaman, created_at, updated_at) VALUES ('".$_SESSION['id_perusahaan']."', '".$decoded_escaped['posisi']."', '".$decoded_escaped['tingkat-pengalaman']."', '".dateToday()."', '".dateToday()."')";
 

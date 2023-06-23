@@ -6,6 +6,9 @@
         </div>
         <div class="home">
             <?php echo "Hallo " . $_SESSION['username'] . "!" . " Selamat Datang di Tracer Alumni" ; ?>  <br>
+            <pre>
+                <?php print_r($data['alumni_data']) ?>
+            </pre>
             <thead>
                 <tr>
                     <th>NIM :</th><br>
