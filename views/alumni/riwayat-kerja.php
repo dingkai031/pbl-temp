@@ -24,8 +24,8 @@
                                     <input type="text" name="lama-kerja" id="lama-kerja" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jabatan" class="form-label">Jabatan</label>
-                                    <input type="text" name="jabatan" id="jabatan" class="form-control" required>
+                                    <label for="posisi" class="form-label">Posisi</label>
+                                    <input type="text" name="posisi" id="posisi" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="penghasilan" class="form-label">Penghasilan</label>

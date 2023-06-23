@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 05:41 PM
+-- Generation Time: Jun 23, 2023 at 03:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -134,7 +134,7 @@ CREATE TABLE `riwayat_kerja` (
   `id_user` int(7) UNSIGNED NOT NULL,
   `id_perusahaan` int(7) UNSIGNED NOT NULL,
   `lama_kerja` int(3) NOT NULL,
-  `jabatan` varchar(40) NOT NULL,
+  `posisi` varchar(40) NOT NULL,
   `penghasilan` int(25) NOT NULL,
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
