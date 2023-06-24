@@ -1,6 +1,7 @@
 <?php
 
 include_once("helpers.php");
+
 $koneksi = mysqli_connect(DB_CREDENTIALS['hostname'], DB_CREDENTIALS['username'], DB_CREDENTIALS['password'], DB_CREDENTIALS['dbname']);
 
 // Check connection

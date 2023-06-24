@@ -39,10 +39,10 @@
                 password: this.querySelector("#password").value,
             };
             sendData('<?= ROOT_URL."login" ?>', data)
-              .then(res => {
+            .then(res => {
                 if (res.status === "success") window.location.replace("<?= ROOT_URL ?>");
-              })
-              .finally(() => submitButtonToggle(theSubmitButton));
+            })
+            .finally(() => submitButtonToggle(theSubmitButton));
         })
     }
 </script>

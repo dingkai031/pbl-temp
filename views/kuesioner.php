@@ -280,7 +280,7 @@
                                         </label>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" name="asal-sertifikat-lainnya" class="form-control" placeholder="Lainnya" required>
+                                        <input type="text" name="asal-sertifikat-lainnya" class="form-control" placeholder="Lainnya">
                                     </div>
                                 </div>
                                 <div class="mb-3">
