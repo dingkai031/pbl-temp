@@ -75,7 +75,8 @@ switch ($select_index_id) {
       }else {
         // show home page
         $data = [
-          "page-name" => WEBSITE_NAME
+          "page-name" => WEBSITE_NAME,
+          "page" => "home"
         ];
         pageBuilder("home.php", "template1", $data);
       }
@@ -148,7 +149,8 @@ switch ($select_index_id) {
     Router::get(function(){
       if (!isLoggedIn()) {
         $data = [
-          "page-name" => WEBSITE_NAME." - KUESIONER"
+          "page-name" => WEBSITE_NAME." - KUESIONER",
+          "page" => "kuesioner-awal"
         ];
         pageBuilder("kuesioner.php", "template1", $data);
       }else {
