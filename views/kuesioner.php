@@ -280,12 +280,12 @@
                                         </label>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" name="asal-sertifikat-lainnya" class="form-control" placeholder="Lainnya" required>
+                                        <input type="text" name="asal-sertifikat-lainnya" class="form-control" placeholder="Lainnya">
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="file-sertifikat" class="form-label fw-bolder">Silahkan upload sertifikat yang anda miliki <span class="text-muted fw-normal">(bisa upload lebih dari satu)</span></label>
-                                    <input type="file" name="file-sertifikat" id="file-sertifikat" class="form-control" required multiple>
+                                    <input type="file" name="file-sertifikat" id="file-sertifikat" class="form-control" multiple>
                                 </div>
                             </div>
                         </div>
@@ -569,7 +569,7 @@
         function setActionButton() {
             function handleSubmit() {
                 const formWrapper = document.querySelector("#form-kuesioner-1");
-                const allInput = formWrapper.querySelectorAll("input, textarea");
+                const allInput = formWrapper.querySelectorAll("input[required], textarea[required]");
                 for (const input of allInput) {
                     if (input.type == "text" || input.tagName.toLowerCase() == "textarea" || input.type == "email" || input.type == "number" || input.type == "password") {
                         if (input.value == "") {
