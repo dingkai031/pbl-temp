@@ -23,7 +23,7 @@ function pageBuilder(string $content, string $template_name, array $data):void {
 
 function submitButton(string $button_name, string $theme_color = "primary"):string {
     return "
-    <button class=\"submit-button btn btn-$theme_color\">
+    <button type=\"submit\" class=\"submit-button btn btn-$theme_color\">
         <span class=\"submit-button-spinner spinner-border spinner-border-sm d-none\" role=\"status\"></span>
         <span class=\"submit-button-text\">$button_name</span>
     </button>";

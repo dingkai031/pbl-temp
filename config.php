@@ -11,6 +11,11 @@ define("DB_CREDENTIALS", [
     "username" => "root",
     "password" => "",
     "dbname" => "tracer_study",
+]);
+
+define("EMAIL_CREDENTIALS", [
+    "email" => "grimlockhelp@gmail.com",
+    "password" => "rrrsyfaljphczprz",
 ])
 
 ?>

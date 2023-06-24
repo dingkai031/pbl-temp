@@ -1,13 +1,13 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 include_once("helpers.php");
-
-
 
 $request_raw = $_SERVER['REQUEST_URI'];
 $request_raw = str_replace($htdocs, "", $request_raw);
-
-
 
 $request = explode("?", $request_raw)[0];
 // user/12312312?tanggal=25&bulan=07
@@ -28,6 +28,7 @@ $page_array[9] = "kuesioner-perusahaan-intro";
 $page_array[10] = "lowongan-kerjaan-perusahaan";
 $page_array[11] = "kuesioner-perusahaan";
 $page_array[400] = "logout";
+$page_array[401] = "email-support";
 
 if ("" == $params[0]) {
   // home page
@@ -268,6 +269,11 @@ switch ($select_index_id) {
   case 400:
     session_destroy();
     PHPRedirect(ROOT_URL);
+    break;  
+  case 401:
+    include_once("vendor/autoload.php");
+    $mail = new PHPMailer(true);
+    include_once "server/send-email.php";
     break;  
   default:
     http_response_code(404);
