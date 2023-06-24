@@ -86,7 +86,8 @@ switch ($select_index_id) {
     Router::get(function(){
       if (!isLoggedIn()) {
         $data = [
-          "page-name" => WEBSITE_NAME." - LOGIN"
+          "page-name" => WEBSITE_NAME." - LOGIN",
+          "page" => "login"
         ];
         pageBuilder("login.php", "template1", $data);
       }else {
