@@ -605,7 +605,7 @@
                         }
                     }
                 }
-                const allAnswerElm = document.querySelectorAll("input[type='text']:not([value]):not([name='username']), input[type='number']:not([value]), textarea, input[type='radio']:checked, input[type='checkbox']:checked");
+                const allAnswerElm = formWrapper.querySelectorAll("input[type='text']:not([value]):not([name='username']):not([name='nim']), input[type='number']:not([value]), textarea:not([name='alamat']), input[type='radio']:checked, input[type='checkbox']:checked");
                 const allAnswer = [];
                 for (const answerElm of allAnswerElm) {
                     if (answerElm.type == "text" || answerElm.tagName.toLowerCase() == "textarea" || answerElm.type == "email" || answerElm.type == "number") {
@@ -627,10 +627,10 @@
                     }
                 };
                 const bodyData = {
-                    nim: document.querySelector("input[name='nim']").value.trim(),
-                    username: document.querySelector("input[name='username']").value.trim(),
-                    password: document.querySelector("input[name='password']").value.trim(),
-                    email: document.querySelector("input[name='email']").value.trim(),
+                    nim: formWrapper.querySelector("input[name='nim']").value.trim(),
+                    username: formWrapper.querySelector("input[name='username']").value.trim(),
+                    password: formWrapper.querySelector("input[name='password']").value.trim(),
+                    email: formWrapper.querySelector("input[name='email']").value.trim(),
                     allAnswer
                 };
                 sendData('<?= ROOT_URL . "kuesioner-awal" ?>', bodyData)

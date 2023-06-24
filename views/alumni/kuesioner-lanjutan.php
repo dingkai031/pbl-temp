@@ -370,7 +370,7 @@
                         }
                     }
                 }
-                const allAnswerElm = document.querySelectorAll("input[type='text']:not([value]), textarea, input[type='radio']:checked, input[type='checkbox']:checked");
+                const allAnswerElm = formWrapper.querySelectorAll("input[type='text']:not([value]), textarea, input[type='radio']:checked, input[type='checkbox']:checked");
                 const allAnswer = [];
                 for (const answerElm of allAnswerElm) {
                     if (answerElm.type == "text" || answerElm.tagName.toLowerCase() == "textarea" || answerElm.type == "email" || answerElm.type == "number") {

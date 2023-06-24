@@ -102,20 +102,11 @@ switch ($select_index_id) {
   case 2 :
     Router::get(function() use($mysqlOutput){
       routeGuard('1', function() use($mysqlOutput){
-        $userAlumni = $mysqlOutput("SELECT * FROM user WHERE level = '3'");
-        $id_mahasiswa = array_column($userAlumni, 'id_mahasiswa');
-        $id_mahasiswa_string = implode(",", $id_mahasiswa);
-        $alumniArray = $mysqlOutput("SELECT * FROM mahasiswa WHERE id_mahasiswa IN ($id_mahasiswa_string)");
-        // sort userAlumni and alumniArray by id_mahasiswa
-        array_multisort($id_mahasiswa, SORT_ASC, $userAlumni);
-        array_multisort(array_column($alumniArray, 'id_mahasiswa'), SORT_ASC, $alumniArray);
-        foreach ($alumniArray as $alumni_key => $alumni) {
-          $alumniArray[$alumni_key]['user_data'] = $userAlumni[$alumni_key];
-        }
+        $userAlumni = $mysqlOutput("SELECT u.id_mahasiswa, u.email, u.username, m.*, k.jawaban_kuesioner FROM user u INNER JOIN mahasiswa m on u.id_mahasiswa=m.id_mahasiswa INNER JOIN kuesioner k on m.id_mahasiswa=k.id_mahasiswa WHERE u.level = '3'");
         $data = [
           "page-name" => WEBSITE_NAME." - ALUMNI",
           "page" => "alumni",
-          "alumniArray" => $alumniArray,
+          "alumniArray" => $userAlumni,
         ];
         pageBuilder("admin/alumni.php", "admin", $data);
       });
@@ -124,20 +115,11 @@ switch ($select_index_id) {
   case 3 :
     Router::get(function() use($mysqlOutput){
       routeGuard('1', function() use($mysqlOutput){
-        $userPerusahaan = $mysqlOutput("SELECT * FROM user WHERE level = '2'");
-        $id_perusahaan = array_column($userPerusahaan, 'id_perusahaan');
-        $id_perusahaan_string = implode(",", $id_perusahaan);
-        $perusahaanArray = $mysqlOutput("SELECT * FROM perusahaan WHERE id_perusahaan IN ($id_perusahaan_string)");
-        // sort userPerusahaan and perusahaanArray by id_perusahaan
-        array_multisort($userPerusahaan, SORT_ASC, $id_perusahaan);
-        array_multisort($perusahaanArray, SORT_ASC, array_column($perusahaanArray, 'id_perusahaan'));
-        foreach ($perusahaanArray as $perusahaan_key => $perusahaan) {
-          $perusahaanArray[$perusahaan_key]['user_data'] = $userPerusahaan[$perusahaan_key];
-        }
+        $userPerusahaan = $mysqlOutput("SELECT u.id_perusahaan, u.email, u.username, p.*, k.jawaban_kuesioner FROM user u INNER JOIN perusahaan p on u.id_perusahaan=p.id_perusahaan INNER JOIN kuesioner k on p.id_perusahaan=k.id_perusahaan WHERE u.level = '2'");
         $data = [
           "page-name" => WEBSITE_NAME." - PERUSAHAAN",
           "page" => "perusahaan",
-          "perusahaanArray" => $perusahaanArray,
+          "perusahaanArray" => $userPerusahaan,
         ];
         pageBuilder("admin/perusahaan.php", "admin", $data);
       });
