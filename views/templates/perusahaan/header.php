@@ -10,6 +10,7 @@
 </head>
 
 <body class="d-flex flex-column" style="min-height: 100vh;background-color:#f4f4f4">
+<?php include_once(realpath(dirname(dirname(__DIR__))."/tambahan/support-add.php")) ?>
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container">
       <a class="navbar-brand" href="<?= ROOT_URL ?>"><img src="<?= ROOT_URL ?>assets/img/logo1.jpg" alt="PBL" style="max-width: 60px;"></a>

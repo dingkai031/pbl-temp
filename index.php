@@ -253,16 +253,18 @@ switch ($select_index_id) {
   case 11 :
     Router::get(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
+        $allAlumniThatWorkHere = $mysqlOutput("SELECT u.user_id, m.id_mahasiswa, m.nama_lengkap, rk.posisi FROM riwayat_kerja rk INNER JOIN user u on rk.id_user = u.user_id INNER JOIN mahasiswa m on u.id_mahasiswa = m.id_mahasiswa WHERE rk.id_perusahaan='".$_SESSION['id_perusahaan']."'");
         $data = [
           "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
           "page" => "kuesioner-perusahaan",
+          "allAlumniData" => $allAlumniThatWorkHere
         ];
         pageBuilder("perusahaan/kuesioner-perusahaan.php", "perusahaan", $data);
       });
     });
     Router::post(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
-        require_once "server/add-loker.php";
+        require_once "server/add-kuesioner-perusahaan.php";
       });
     });
     break;

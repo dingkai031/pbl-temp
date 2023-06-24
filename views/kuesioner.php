@@ -260,7 +260,7 @@
                                     <input id="jenis-sertifikat" type="text" name="jenis-sertifikat" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Dari manakah sertifikat kompetensi yang dimiliki? <span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
+                                    <label class="form-label fw-bolder">Dari manakah sertifikat kompetensi yang dimiliki? <span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
                                     <div class="form-check">
                                         <input class="form-check-input" name="asal-sertifikat" type="checkbox" value="poltek-negri-batam" id="asal-sertifikat">
                                         <label class="form-check-label" for="asal-sertifikat">
