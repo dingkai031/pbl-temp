@@ -19,7 +19,6 @@
         </div>
         <div class="home">
             <?php echo "Hallo " . $_SESSION['username'] . "!" . " Selamat Datang di Tracer Alumni"; ?>  <br>
-            
             <table class="table">
             <tbody>
                     <?php

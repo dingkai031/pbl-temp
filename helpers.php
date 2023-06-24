@@ -13,7 +13,7 @@ $htdocs = inHTDOCS ? "/".basename(dirname(__FILE__))."/" : "";
 if (PRODUCTION_STATE) {
     DEFINE("ROOT_URL", "https://" . $root_url_without_http) . $htdocs;
 }else {
-    DEFINE("ROOT_URL", "http://" . $root_url_without_http . $htdocs);
+    DEFINE("ROOT_URL", "https://" . $root_url_without_http . $htdocs);
 }
 // http://localhost:8080/pbl
 
