@@ -10,7 +10,9 @@
                                 POLITEKNIK NEGERI BATAM <br>
                                 Tracer Study
                             </h1>
-                            <p style="text-align: justify;">Para alumni yang terhormat, saat ini kami sedang mengadakan Tracer Study kepada alumni Polibatam. Studi ini dilakukan dalam rangka mengidentifikasi keberadaan alumni setelah lulus kuliah. Tujuan studi ini untuk mengevaluasi proses dan hasil perkuliahan, penyempurnaan serta penjaminan kualitas pembelajaran di Polibatam</p>
+                            <p style="text-align: justify;">Para alumni yang terhormat, saat ini kami sedang mengadakan Tracer Study kepada alumni Polibatam. Studi ini 
+                            dilakukan dalam rangka mengidentifikasi keberadaan alumni setelah lulus kuliah. 
+                            Tujuan studi ini untuk mengevaluasi proses dan hasil perkuliahan, penyempurnaan serta penjaminan kualitas pembelajaran di Polibatam</p>
                             <a href="<?= ROOT_URL ?>login" class="btn btn-primary" style="width: fit-content;">LOGIN</a>
                         </div>
                         <div class="col-md-4">
