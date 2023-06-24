@@ -11,12 +11,7 @@
             <p>Berkaitan dengan hal tersebut kami mohon partisipasi saudara meluangkan waktu untuk menjawab pertanyaan dalam kuesioner ini, data yang
                 telah disampaikan akan dijaga kerahasaiaannya. Atas perhatian dan kerjasama yang baik serta bantuannya, kami mengucapkan terima kasih.</p>
             <hr>
-            <?php if (!$data['done-survey']) : ?>
-                <p class="h4 fw-bolder">"Kuesioner Anda belum Selesai"</p>
-                <a href="<?= ROOT_URL."kuesioner-perusahaan" ?>" class="btn btn-primary mt-4">Lanjutkan</a>
-            <?php else : ?>
-                <p class="h4 fw-bolder">"Kuesioner Anda sudah Selesai"</p>
-            <?php endif ?>
+            <a href="<?= ROOT_URL."kuesioner-perusahaan" ?>" class="btn btn-primary mt-4">Lanjutkan</a>
         </div>
     </div>
 </div>

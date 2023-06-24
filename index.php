@@ -27,6 +27,7 @@ $page_array[8] = "lowongan-kerja";
 $page_array[9] = "kuesioner-perusahaan-intro";
 $page_array[10] = "lowongan-kerjaan-perusahaan";
 $page_array[11] = "kuesioner-perusahaan";
+$page_array[12] = "kuesioner-lanjutan";
 $page_array[400] = "logout";
 $page_array[401] = "email-support";
 
@@ -216,16 +217,15 @@ switch ($select_index_id) {
   case 9 :
     Router::get(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
-        $findKuesioner = $mysqlOutput('SELECT id_kuesioner FROM kuesioner WHERE id_perusahaan=\''.$_SESSION['id_perusahaan'].'\'');
-        if (count($findKuesioner) > 0) {
-          $isDoneFillingSurvey = true;
-        }else {
-          $isDoneFillingSurvey = false;
-        }
+        // $findKuesioner = $mysqlOutput('SELECT id_kuesioner FROM kuesioner WHERE id_perusahaan=\''.$_SESSION['id_perusahaan'].'\'');
+        // if (count($findKuesioner) > 0) {
+        //   $isDoneFillingSurvey = true;
+        // }else {
+        //   $isDoneFillingSurvey = false;
+        // }
         $data = [
           "page-name" => WEBSITE_NAME." - Kuesioner",
-          "page" => "kuesioner-perusahaan",
-          "done-survey" => $isDoneFillingSurvey
+          "page" => "kuesioner-perusahaan-intro",
         ];
         pageBuilder("perusahaan/kuesioner-perusahaan-intro.php", "perusahaan", $data);
       });
@@ -255,8 +255,8 @@ switch ($select_index_id) {
       routeGuard('2', function() use($mysqlOutput){
         $allAlumniThatWorkHere = $mysqlOutput("SELECT u.user_id, m.id_mahasiswa, m.nama_lengkap, rk.posisi FROM riwayat_kerja rk INNER JOIN user u on rk.id_user = u.user_id INNER JOIN mahasiswa m on u.id_mahasiswa = m.id_mahasiswa WHERE rk.id_perusahaan='".$_SESSION['id_perusahaan']."'");
         $data = [
-          "page-name" => WEBSITE_NAME." - Lowongan Kerjaan",
-          "page" => "kuesioner-perusahaan",
+          "page-name" => WEBSITE_NAME." - Kuesioner",
+          "page" => "kuesioner-perusahaan-intro",
           "allAlumniData" => $allAlumniThatWorkHere
         ];
         pageBuilder("perusahaan/kuesioner-perusahaan.php", "perusahaan", $data);
@@ -264,6 +264,22 @@ switch ($select_index_id) {
     });
     Router::post(function() use($mysqlOutput){
       routeGuard('2', function() use($mysqlOutput){
+        require_once "server/add-kuesioner-perusahaan.php";
+      });
+    });
+    break;
+  case 12 :
+    Router::get(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
+        $data = [
+          "page-name" => WEBSITE_NAME." - Kuesioner Lanjutan",
+          "page" => "kuesioner-lanjutan-intro"
+        ];
+        pageBuilder("alumni/kuesioner-lanjutan.php", "alumni", $data);
+      });
+    });
+    Router::post(function() use($mysqlOutput){
+      routeGuard('3', function() use($mysqlOutput){
         require_once "server/add-kuesioner-perusahaan.php";
       });
     });

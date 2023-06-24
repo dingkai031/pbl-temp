@@ -14,7 +14,7 @@
             <hr>
             <?php if(!$data['done-second-survey']) :?>
                 <p class="h4 fw-bolder">"Kuesioner Anda belum Selesai"</p>
-                <a href="#" class="btn btn-primary mt-4">Lanjutkan</a>
+                <a href="<?= ROOT_URL."kuesioner-lanjutan" ?>" class="btn btn-primary mt-4">Lanjutkan</a>
             <?php else : ?>
                 <p class="h4 fw-bolder">"Kuesioner Anda sudah Selesai"</p>
             <?php endif ?>

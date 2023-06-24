@@ -10,20 +10,147 @@
                         <div class="row g-0">
                             <div class="col-lg-6 mb-3">
                                 <div class="mb-3">
-                                    <label for="nim" class="form-label">NIM</label>
-                                    <input id="nim" type="text" name="nim" class="form-control" required>
+                                    <label class="form-label">Apakah saat ini Anda sedang bersekolah/kuliah?</label>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="apakah-sedang-sekolah-atau-kuliah" id="apakah-sedang-sekolah-atau-kuliah-1" value="ya">
+                                        <label class="form-check-label" for="apakah-sedang-sekolah-atau-kuliah-1">Ya</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="apakah-sedang-sekolah-atau-kuliah" id="apakah-sedang-sekolah-atau-kuliah-2" value="tidak">
+                                        <label class="form-check-label" for="apakah-sedang-sekolah-atau-kuliah-2">Tidak</label>
+                                    </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="alamat" class="form-label">Alamat tempat tinggal sekarang</label>
-                                    <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
+                                    <label class="form-label">Apakah anda sedang atau pernah mengikuti pelatihan atau sertifikasi?</label>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sedang-ikut-pelatihan" id="sedang-ikut-pelatihan-1" value="ya">
+                                        <label class="form-check-label" for="sedang-ikut-pelatihan-1">Ya</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sedang-ikut-pelatihan" id="sedang-ikut-pelatihan-2" value="tidak">
+                                        <label class="form-check-label" for="sedang-ikut-pelatihan-2">Tidak</label>
+                                    </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" required>
+                                    <label for="jenis-pelatihan" class="form-label">Apakah anda sedang atau pernah mengikuti pelatihan atau sertifikasi?</label>
+                                    <input type="text" name="jenis-pelatihan" id="jenis-pelatihan" class="form-control" required>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="steps d-none">
+                        <div class="col-lg-6 mb-3">
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label fw-bolder">Aktifitas apa yang sedang anda lakukan saat ini?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="aktivitas-yang-sedang-dilakukan" type="checkbox" value="bekerja" id="aktivitas-yang-sedang-dilakukan">
+                                    <label class="form-check-label" for="aktivitas-yang-sedang-dilakukan">
+                                        Bekerja
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="aktivitas-yang-sedang-dilakukan" type="checkbox" value="berwirausaha" id="aktivitas-yang-sedang-dilakukan-2">
+                                    <label class="form-check-label" for="aktivitas-yang-sedang-dilakukan-2">
+                                        Berwirausaha
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="aktivitas-yang-sedang-dilakukan" type="checkbox" value="sedang mencari kerjaan" id="aktivitas-yang-sedang-dilakukan-3">
+                                    <label class="form-check-label" for="aktivitas-yang-sedang-dilakukan-3">
+                                        Sedang mencari kerjaan
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps d-none">
+                        <div class="col-lg-6 mb-3">
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label fw-bolder">Situasi apa yang sedang anda alami saat ini?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="mencari-nafkah" id="situasi-yang-sedang-dialami-3">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-3">
+                                        Tanggung jawab mencari nafkah
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="tamat-sekolah" id="situasi-yang-sedang-dialami-4">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-4">
+                                        Tamat sekolah/tidak bersekolah lagi
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="phk" id="situasi-yang-sedang-dialami-5">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-5">
+                                        PHK
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="usaha bangkrut" id="situasi-yang-sedang-dialami-6">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-6">
+                                        Usaha Bangkrut
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="masa kontrak habis" id="situasi-yang-sedang-dialami-7">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-7">
+                                        Masa kontrak habis
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="situasi-yang-sedang-dialami" type="checkbox" value="lainnya" id="situasi-yang-sedang-dialami-8">
+                                    <label class="form-check-label" for="situasi-yang-sedang-dialami-8">
+                                        Lainnya
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label fw-bolder">Alasan utama tidak mencari pekerjaan atau mempersiapkan suatu usaha/wirausaha setelah lulus kuliah</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="sudah-diterima-kerja-atau-punya-usaha" id="alasan-tidak-mencari-pekerjaan-3">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-3">
+                                        Sudah diterima bekerja/sudah mempunyai usaha, tetapi belum mulai bekerja/belum memulai usaha
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="putus-asa" id="alasan-tidak-mencari-pekerjaan-4">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-4">
+                                    Putus asa (sudah mencoba berulang kali tapi tidak kunjung mendapatkan pekerjaan)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="mengurus-rumah-tangga" id="alasan-tidak-mencari-pekerjaan-5">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-5">
+                                    Mengurus rumah tangga
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="sedang-melanjutkan-pendidikan" id="alasan-tidak-mencari-pekerjaan-6">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-6">
+                                    Sedang melanjutkan pendidikan
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="masa kontrak habis" id="alasan-tidak-mencari-pekerjaan-7">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-7">
+                                        Masa kontrak habis
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="alasan-tidak-mencari-pekerjaan" type="checkbox" value="tidak-punya-modal" id="alasan-tidak-mencari-pekerjaan-8">
+                                    <label class="form-check-label" for="alasan-tidak-mencari-pekerjaan-8">
+                                    Tidak mempunyai modal
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps d-none">
+                        <div class="row g-0">
                             <div class="col-12 mb-3">
-                                <p class="fw-bolder">Bagaimana kepuasan Anda terhadap kondisi pembelajaran di Politeknik Negeri Batam?</p>
+                                <p class="fw-bolder">Seberapa penting kemampuan berikut ini dibutuhkan di instansi/lembaga/perusahaan/tempat Anda bekerja/berwirausaha?</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -38,123 +165,83 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Kualitas pendidik/guru/dosen/instruktur</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-pendidik" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-pendidik" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-pendidik" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-pendidik" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-pendidik" value="5" required></td>
+                                                <td>Kemampuan menggunakan peralatan teknologi informasi</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menggunakan-teknologi" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menggunakan-teknologi" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menggunakan-teknologi" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menggunakan-teknologi" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menggunakan-teknologi" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Bimbingan akademik secara umum</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-secara-umum" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-secara-umum" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-secara-umum" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-secara-umum" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-secara-umum" value="5" required></td>
+                                                <td>Kemampuan berbahasa asing</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-bahasa-asing" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-bahasa-asing" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-bahasa-asing" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-bahasa-asing" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-bahasa-asing" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Bimbingan untuk menghadapi ujian akhir</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-ujian-akhir" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-ujian-akhir" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-ujian-akhir" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-ujian-akhir" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-ujian-akhir" value="5" required></td>
+                                                <td>Kemampuan menyampaikan ide dan solus</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menyampaikan-ide" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menyampaikan-ide" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menyampaikan-ide" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menyampaikan-ide" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-menyampaikan-ide" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Materi Pelajaran/Matakuliah</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="materi-pelajaran" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="materi-pelajaran" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="materi-pelajaran" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="materi-pelajaran" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="materi-pelajaran" value="5" required></td>
+                                                <td>Kemampuan untuk beradaptasi dengan lingkungan kerja</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-beradaptasi-dengan-lingkungan-kerja" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-beradaptasi-dengan-lingkungan-kerja" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-beradaptasi-dengan-lingkungan-kerja" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-beradaptasi-dengan-lingkungan-kerja" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemampuan-beradaptasi-dengan-lingkungan-kerja" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Keberagaman program studi/bidang keahlian/keterampilan yang ditawarkan</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="keberagaman-program-studi" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="keberagaman-program-studi" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="keberagaman-program-studi" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="keberagaman-program-studi" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="keberagaman-program-studi" value="5" required></td>
+                                                <td>Berpikir analitis</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="berpikir-analitis" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="berpikir-analitis" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="berpikir-analitis" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="berpikir-analitis" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="berpikir-analitis" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Sistem penilaian</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sistem-penilaian" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sistem-penilaian" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sistem-penilaian" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sistem-penilaian" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sistem-penilaian" value="5" required></td>
+                                                <td>Kemampuan bekerja secara efektif untuk mencapai tujuan</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efektif" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efektif" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efektif" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efektif" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efektif" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Penekanan pada praktik dan praktikum</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penekanan-praktik" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penekanan-praktik" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penekanan-praktik" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penekanan-praktik" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penekanan-praktik" value="5" required></td>
+                                                <td>Kemampuan mengelola pekerjaan secara efisien</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efisien" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efisien" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efisien" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efisien" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-secara-efisien" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Metode pengajaran</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="metode-pengajaran" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="metode-pengajaran" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="metode-pengajaran" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="metode-pengajaran" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="metode-pengajaran" value="5" required></td>
+                                                <td>Kemampuan bekerja sama dalam tim</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-sama-dalam-tim" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-sama-dalam-tim" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-sama-dalam-tim" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-sama-dalam-tim" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="bekerja-sama-dalam-tim" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Koleksi buku perpustakaan</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="koleksi-buku" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="koleksi-buku" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="koleksi-buku" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="koleksi-buku" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="koleksi-buku" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ketersediaan bahan ajar</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="ketersediaan-bahan-ajar" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="ketersediaan-bahan-ajar" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="ketersediaan-bahan-ajar" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="ketersediaan-bahan-ajar" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="ketersediaan-bahan-ajar" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kualitas dari fasilitas yang disediakan</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-fasilitas" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-fasilitas" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-fasilitas" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-fasilitas" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-fasilitas" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kualitas program magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-magang" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-magang" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-magang" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-magang" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-magang" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kualitas pembelajaran bahasa asing</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-bhs-asing" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-bhs-asing" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-bhs-asing" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-bhs-asing" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kualitas-bhs-asing" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kualitas dari fasilitas yang disediakan</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="program-pengembangan-budaya" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="program-pengembangan-budaya" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="program-pengembangan-budaya" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="program-pengembangan-budaya" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="program-pengembangan-budaya" value="5" required></td>
+                                                <td>Berkinerja baik walaupun ada di bawah tekanan</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-dibawah-tekanan" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-dibawah-tekanan" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-dibawah-tekanan" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-dibawah-tekanan" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-dibawah-tekanan" value="5" required></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
-                                <p class="fw-bolder">Menurut Anda, bagaimana kualitas magang selama studi?</p>
+                                <p class="fw-bolder">Seberapa bermanfaat Studi Anda dikaitkan dengan pekerjaan/wirausaha sekarang?</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -169,378 +256,55 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Penempatan magang oleh Politeknik Negeri Batam</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penempatan-magan" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penempatan-magan" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penempatan-magan" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penempatan-magan" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penempatan-magan" value="5" required></td>
+                                                <td>Teori dan praktik</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="teori-dan-praktik" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="teori-dan-praktik" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="teori-dan-praktik" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="teori-dan-praktik" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="teori-dan-praktik" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Kejelasan kegiatan selama magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kejelasan-magang" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kejelasan-magang" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kejelasan-magang" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kejelasan-magang" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kejelasan-magang" value="5" required></td>
+                                                <td>Sikap dan kemampuan berkomunikasi (budaya kerja)</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="sikap-dan-kemampuan-berkomunikasi" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="sikap-dan-kemampuan-berkomunikasi" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="sikap-dan-kemampuan-berkomunikasi" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="sikap-dan-kemampuan-berkomunikasi" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="sikap-dan-kemampuan-berkomunikasi" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Sarana praktik di tempat magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sarana-praktik-ditempat-magang" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sarana-praktik-ditempat-magang" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sarana-praktik-ditempat-magang" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sarana-praktik-ditempat-magang" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="sarana-praktik-ditempat-magang" value="5" required></td>
+                                                <td>Jejaring kerja sama dengan DUDI</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-sama-dengan-dudi" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-sama-dengan-dudi" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-sama-dengan-dudi" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-sama-dengan-dudi" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kerja-sama-dengan-dudi" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Bimbingan selama magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-selama-magan" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-selama-magan" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-selama-magan" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-selama-magan" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="bimbingan-selama-magan" value="5" required></td>
+                                                <td>Kemandirian (budaya kerja)</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemandirian" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemandirian" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemandirian" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemandirian" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="kemandirian" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Evaluasi setelah selesai magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="evaluasi-setelah-magang" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="evaluasi-setelah-magang" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="evaluasi-setelah-magang" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="evaluasi-setelah-magang" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="evaluasi-setelah-magang" value="5" required></td>
+                                                <td>Magang/prakerin</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="magang" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="magang" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="magang" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="magang" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="magang" value="5" required></td>
                                             </tr>
                                             <tr>
-                                                <td>Penyaluran bekerja setelah selesai magang</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penyaluran-kerja-setelah-magan" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penyaluran-kerja-setelah-magan" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penyaluran-kerja-setelah-magan" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penyaluran-kerja-setelah-magan" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="penyaluran-kerja-setelah-magan" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kesesuaian tugas magang dengan prodi/bidang keahlian/jenis keterampilan</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kesesuaian-tugas-magan" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kesesuaian-tugas-magan" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kesesuaian-tugas-magan" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kesesuaian-tugas-magan" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kesesuaian-tugas-magan" value="5" required></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kurikulum berstandar industri</td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kurikulum-berstandar-industri" value="1" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kurikulum-berstandar-industri" value="2" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kurikulum-berstandar-industri" value="3" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kurikulum-berstandar-industri" value="4" required></td>
-                                                <td class="text-center"><input class="form-check-input" type="radio" name="kurikulum-berstandar-industri" value="5" required></td>
+                                                <td>Menulis tugas akhir</td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="menulis-tugas-akhir" value="1" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="menulis-tugas-akhir" value="2" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="menulis-tugas-akhir" value="3" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="menulis-tugas-akhir" value="4" required></td>
+                                                <td class="text-center"><input class="form-check-input" type="radio" name="menulis-tugas-akhir" value="5" required></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Apakah Anda memiliki sertifikat kompetensi?</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sertifikat-kompetensi" id="sertifikat-kompetensi-1" value="ya">
-                                        <label class="form-check-label" for="sertifikat-kompetensi-1">Ya</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sertifikat-kompetensi" id="sertifikat-kompetensi-2" value="tidak">
-                                        <label class="form-check-label" for="sertifikat-kompetensi-2">Tidak</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label for="jenis-sertifikat" class="form-label fw-bolder">Apakah jenis sertifikat kompetensi yang dimiliki? <span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
-                                    <input id="jenis-sertifikat" type="text" name="jenis-sertifikat" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Dari manakah sertifikat kompetensi yang dimiliki? <span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="asal-sertifikat" type="checkbox" value="poltek-negri-batam" id="asal-sertifikat">
-                                        <label class="form-check-label" for="asal-sertifikat">
-                                            Diterbitkan oleh Politeknik Negeri Batam
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="asal-sertifikat" type="checkbox" value="lembaga-mitra-poltek-batam" id="asal-sertifikat-2">
-                                        <label class="form-check-label" for="asal-sertifikat-2">
-                                            Diterbitkan oleh lembaga lain yang bermitra dengan Politeknik Negeri Batam
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="asal-sertifikat" type="checkbox" value="kegiatan-mandiri" id="asal-sertifikat-3">
-                                        <label class="form-check-label" for="asal-sertifikat-3">
-                                            Melalui kegiatan dan biaya mandiri
-                                        </label>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="text" name="asal-sertifikat-lainnya" class="form-control" placeholder="Lainnya" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="file-sertifikat" class="form-label fw-bolder">Silahkan upload sertifikat yang anda miliki <span class="text-muted fw-normal">(bisa upload lebih dari satu)</span></label>
-                                    <input type="file" name="file-sertifikat" id="file-sertifikat" class="form-control" required multiple>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Apakah saat ini Anda sudah bekerja?</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sudah-bekerja" id="sudah-bekerja-1" value="ya">
-                                        <label class="form-check-label" for="sudah-bekerja-1">Ya</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sudah-bekerja" id="sudah-bekerja-2" value="tidak">
-                                        <label class="form-check-label" for="sudah-bekerja-2">Tidak</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Apakah Anda bekerja di tempat magang?</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kerja-di-tempat-magang" id="kerja-di-tempat-magang-1" value="ya">
-                                        <label class="form-check-label" for="kerja-di-tempat-magang-1">Ya</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="kerja-di-tempat-magang" id="kerja-di-tempat-magang-2" value="tidak">
-                                        <label class="form-check-label" for="kerja-di-tempat-magang-2">Tidak</label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="tanggal-mulai-bekerja" class="form-label fw-bolder">Bulan dan tahun mulai bekerja <span class="text-muted fw-normal">(sebelum lulus atau setelah lulus)</span></label>
-                                    <input id="tanggal-mulai-bekerja" type="month" name="tanggal-mulai-bekerja" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Skala perusahaan tempat anda bekerja</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="skala-perusahaan-tempat-bekerja" id="skala-perusahaan-tempat-bekerja-1" value="lokal">
-                                        <label class="form-check-label" for="skala-perusahaan-tempat-bekerja-1">Lokal</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="skala-perusahaan-tempat-bekerja" id="skala-perusahaan-tempat-bekerja-2" value="nasional">
-                                        <label class="form-check-label" for="skala-perusahaan-tempat-bekerja-2">Nasional</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="skala-perusahaan-tempat-bekerja" id="skala-perusahaan-tempat-bekerja-3" value="internasional">
-                                        <label class="form-check-label" for="skala-perusahaan-tempat-bekerja-3">Internasional</label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="bagian-dan-posisi" class="form-label fw-bolder">Bagian dan posisi atau jabatan di tempat kerja anda sekarang</label>
-                                    <input type="bagian-dan-posisi" name="bagian-dan-posisi" id="bagian-dan-posisi" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bolder">Penghasilan (takehomepay) yang diterima per bulan</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="penghasilan-perbulan" id="penghasilan-perbulan-1" value="<1juta">
-                                        <label class="form-check-label" for="penghasilan-perbulan-1">Kurang dari 1 juta</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="penghasilan-perbulan" id="penghasilan-perbulan-2" value="1-5juta">
-                                        <label class="form-check-label" for="penghasilan-perbulan-2">1-5juta</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="penghasilan-perbulan" id="penghasilan-perbulan-3" value="5juta>">
-                                        <label class="form-check-label" for="penghasilan-perbulan-3">Lebih dari 5 juta</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Apakah memiliki usaha atau berwirausaha</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="memiliki-usaha" id="memiliki-usaha-1" value="ya">
-                                        <label class="form-check-label" for="memiliki-usaha-1">Ya</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="memiliki-usaha" id="memiliki-usaha-2" value="tidak">
-                                        <label class="form-check-label" for="memiliki-usaha-2">Tidak</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label for="tahun-mulai-usaha" class="form-label fw-bolder">Tahun memulai usaha atau berwirausaha</label>
-                                    <input type="number" name="tahun-mulai-usaha" id="tahun-mulai-usaha" max="4" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Jenis usaha/perusahaan</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="jenis-usaha" type="radio" value="jasa" id="jenis-usaha" required>
-                                        <label class="form-check-label" for="jenis-usaha">
-                                            Jasa
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="jenis-usaha" type="radio" value="dagang" id="jenis-usaha-2" required>
-                                        <label class="form-check-label" for="jenis-usaha-2">
-                                            Dagang
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="jenis-usaha" type="radio" value="manufaktur" id="jenis-usaha-3" required>
-                                        <label class="form-check-label" for="jenis-usaha-3">
-                                            Manufaktur
-                                        </label>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="text" name="jenis-usaha-lainnya" class="form-control" placeholder="Lainnya">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nama-usaha" class="form-label fw-bolder">Nama usaha/perusahaan</label>
-                                    <input type="text" name="nama-usaha" id="nama-usaha" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat-usaha" class="form-label fw-bolder">Alamat usaha/perusahaan</label>
-                                    <textarea name="alamat-usaha" id="alamat-usaha" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label class="form-label">Apakah memiliki prestasi selama kuliah</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prestasi-selama-kuliah" id="prestasi-selama-kuliah-1" value="ya">
-                                        <label class="form-check-label" for="prestasi-selama-kuliah-1">Ya</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prestasi-selama-kuliah" id="prestasi-selama-kuliah-2" value="tidak">
-                                        <label class="form-check-label" for="prestasi-selama-kuliah-2">Tidak</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Dibidang apa prestasi yang dimiliki <span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="bidang-prestasi" type="checkbox" value="akademik" id="bidang-prestasi">
-                                        <label class="form-check-label" for="bidang-prestasi">
-                                            Akademik
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="bidang-prestasi" type="checkbox" value="non-akademik" id="bidang-prestasi-2">
-                                        <label class="form-check-label" for="bidang-prestasi-2">
-                                            Non akademik
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Tingkat prestasi yang diraih di bidang akademik<span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-akademik" type="checkbox" value="lokal" id="tingkat-prestasi-akademik">
-                                        <label class="form-check-label" for="tingkat-prestasi-akademik">
-                                            Lokal
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-akademik" type="checkbox" value="nasional" id="tingkat-prestasi-akademik-2">
-                                        <label class="form-check-label" for="tingkat-prestasi-akademik-2">
-                                            Nasional
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-akademik" type="checkbox" value="internasional" id="tingkat-prestasi-akademik-3">
-                                        <label class="form-check-label" for="tingkat-prestasi-akademik-3">
-                                            Internasional
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Tingkat prestasi yang diraih di bidang non-akademik<span class="text-muted fw-normal">(bisa diisi lebih dari satu)</span></label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-non-akademik" type="checkbox" value="lokal" id="tingkat-prestasi-non-akademik">
-                                        <label class="form-check-label" for="tingkat-prestasi-non-akademik">
-                                            Lokal
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-non-akademik" type="checkbox" value="nasional" id="tingkat-prestasi-non-akademik-2">
-                                        <label class="form-check-label" for="tingkat-prestasi-non-akademik-2">
-                                            Nasional
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="tingkat-prestasi-non-akademik" type="checkbox" value="internasional" id="tingkat-prestasi-non-akademik-3">
-                                        <label class="form-check-label" for="tingkat-prestasi-non-akademik-3">
-                                            Internasional
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamat" class="form-label fw-bolder">Juara berapa pada prestasi tersebut<span class="text-muted fw-normal">(jika ada lebih dari satu, pilih yang paling tinggi)</span></label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="juara-prestasi" type="radio" value="1" id="juara-prestasi">
-                                        <label class="form-check-label" for="juara-prestasi">
-                                            Juara 1
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="juara-prestasi" type="radio" value="2" id="juara-prestasi-2">
-                                        <label class="form-check-label" for="juara-prestasi-2">
-                                            Juara 2
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="juara-prestasi" type="radio" value="3" id="juara-prestasi-3">
-                                        <label class="form-check-label" for="juara-prestasi-3">
-                                            Juara 3
-                                        </label>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input name="juara-prestasi-lainnya" type="number" class="form-control" placeholder="Lainnya" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="steps d-none">
-                        <div class="row g-0">
-                            <div class="col-lg-6 mb-3">
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" name="username" id="username" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -606,7 +370,7 @@
                         }
                     }
                 }
-                const allAnswerElm = document.querySelectorAll("input[type='text']:not([value]):not([name='username']), input[type='number']:not([value]), textarea, input[type='radio']:checked, input[type='checkbox']:checked");
+                const allAnswerElm = document.querySelectorAll("input[type='text']:not([value]), textarea, input[type='radio']:checked, input[type='checkbox']:checked");
                 const allAnswer = [];
                 for (const answerElm of allAnswerElm) {
                     if (answerElm.type == "text" || answerElm.tagName.toLowerCase() == "textarea" || answerElm.type == "email" || answerElm.type == "number") {
@@ -616,7 +380,6 @@
                         });
                     } else if (answerElm.type == "radio" || answerElm.type == "checkbox") {
                         const pos = allAnswer.map(answer => answer.question).indexOf(answerElm.getAttribute("name"));
-                        // console.log(allAnswer.map(answer => answer.question))
                         if (pos < 0) {
                             allAnswer.push({
                                 question: answerElm.getAttribute("name"),
@@ -627,18 +390,15 @@
                         }
                     }
                 };
+                console.log(allAnswer)
                 const bodyData = {
-                    nim: document.querySelector("input[name='nim']").value.trim(),
-                    username: document.querySelector("input[name='username']").value.trim(),
-                    password: document.querySelector("input[name='password']").value.trim(),
-                    email: document.querySelector("input[name='email']").value.trim(),
                     allAnswer
                 };
-                sendData('<?= ROOT_URL . "kuesioner-awal" ?>', bodyData)
-                    .then(res => {
-                        if (res.status == "error") alert(res.pesan);
-                        if (res.status === "success") window.location.replace("<?= ROOT_URL ?>");
-                    });
+                // sendData('<?= ROOT_URL . "kuesioner-awal" ?>', bodyData)
+                //     .then(res => {
+                //         if (res.status == "error") alert(res.pesan);
+                //         if (res.status === "success") window.location.replace("<?= ROOT_URL ?>");
+                //     });
             }
             const activeStep = document.querySelector(".steps:not(.d-none)");
             document.querySelectorAll(".action-button").forEach(elm => elm.setAttribute('disabled', ''));
