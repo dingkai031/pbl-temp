@@ -55,9 +55,11 @@ switch ($select_index_id) {
           ];
           pageBuilder("admin/home.php", "admin", $data);
         }elseif($_SESSION['level'] === "2") {
+          $getLoggedInPerusahaanData = $mysqlOutput("SELECT * fROM perusahaan WHERE id_perusahaan='".$_SESSION['id_perusahaan']."'")[0];
           $data = [
             "page-name" => WEBSITE_NAME." - PERUSAHAAN",
-            "page" => "home"
+            "page" => "home",
+            "perusahaan_data" => $getLoggedInPerusahaanData
           ];
           pageBuilder("perusahaan/home.php", "perusahaan", $data);
         }elseif($_SESSION['level'] === "3") {

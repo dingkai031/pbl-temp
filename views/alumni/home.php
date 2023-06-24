@@ -19,49 +19,40 @@
         </div>
         <div class="home">
             <?php echo "Hallo " . $_SESSION['username'] . "!" . " Selamat Datang di Tracer Alumni"; ?>  <br>
-            <pre>
-                <?php print_r($data['alumni_data']) ?>
-            </pre>
+            
             <table class="table">
             <tbody>
                     <?php
-                    
-                    // while ($data = mysqli_fetch_array($query)) {
-                    //     // Check if the current row's data matches the logged-in user
-                    // if ($_SESSION['id_mahasiswa'] == $data['id_mahasiswa']) {
                     ?>
                     <tr>
-                        <th>NIM :</th>
-                        <td><?php //echo $data['nim']; ?></td>                    
+                        <th>NIM</th>
+                        <td>: <?php echo $data['alumni_data']['nim']; ?></td>                    
                     </tr>
                     <tr>
-                        <th>Nama :</th>
-                        <td><?php //echo $data['nama_lengkap']; ?></td>
+                        <th>Nama</th>
+                        <td>: <?php echo $data['alumni_data']['nama_lengkap']; ?></td>
                     </tr>
                     <tr>
-                        <th>Prodi :</th>
-                        <td><?php //echo $data['prodi']; ?></td>
+                        <th>Prodi</th>
+                        <td>: <?php echo $data['alumni_data']['prodi']; ?></td>
                     </tr>
                     <tr>
-                        <th>Email :</th>
-                        <td><?php //echo $data['email_kampus']; ?></td>
+                        <th>Email</th>
+                        <td>: <?php echo $data['alumni_data']['email_kampus']; ?></td>
                     </tr>
                     <tr>
-                        <th>Telp :</th>
-                        <td><?php //echo $data['telp']; ?></td>
+                        <th>Telp</th>
+                        <td>: <?php echo $data['alumni_data']['telp']; ?></td>
                     </tr>
                     <tr>
-                        <th>Jenis Kelamin :</th>
-                        <td><?php //echo $data['jenis_kelamin']; ?></td>
+                        <th>Jenis Kelamin</th>
+                        <td>: <?php echo $data['alumni_data']['jenis_kelamin']; ?></td>
                     </tr>
                     <tr>
-                        <th>IPK :</th>
-                        <td><?php //echo $data['ipk']; ?></td>
-                    </tr>
-                    <!-- Add the necessary code to display other columns from the "mahasiswa" table -->                
+                        <th>IPK</th>
+                        <td>: <?php echo $data['alumni_data']['ipk']; ?></td>
+                    </tr>        
                     <?php
-                    //     }
-                    // }
                     ?>
             </tbody>
             </table>
