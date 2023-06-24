@@ -390,15 +390,12 @@
                         }
                     }
                 };
-                console.log(allAnswer)
-                const bodyData = {
-                    allAnswer
-                };
-                // sendData('<?= ROOT_URL . "kuesioner-awal" ?>', bodyData)
-                //     .then(res => {
-                //         if (res.status == "error") alert(res.pesan);
-                //         if (res.status === "success") window.location.replace("<?= ROOT_URL ?>");
-                //     });
+                sendData('<?= ROOT_URL . "kuesioner-lanjutan" ?>', allAnswer)
+                    .then(res => {
+                        console.log(res);
+                        if (res.status == "error") alert(res.pesan);
+                        if (res.status === "success") window.location.replace("<?= ROOT_URL ?>");
+                    });
             }
             const activeStep = document.querySelector(".steps:not(.d-none)");
             document.querySelectorAll(".action-button").forEach(elm => elm.setAttribute('disabled', ''));

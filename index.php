@@ -282,7 +282,7 @@ switch ($select_index_id) {
     });
     Router::post(function() use($mysqlOutput){
       routeGuard('3', function() use($mysqlOutput){
-        require_once "server/add-kuesioner-perusahaan.php";
+        require_once "server/add-kuesioner-2.php";
       });
     });
     break;
