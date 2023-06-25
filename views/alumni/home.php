@@ -45,7 +45,12 @@
                     </tr>
                     <tr>
                         <th>Jenis Kelamin</th>
-                        <td>: <?php echo $data['alumni_data']['jenis_kelamin']; ?></td>
+                        <td>: <?php if ($data['alumni_data']['jenis_kelamin'] == '1' ) {
+                                    echo "Laki Laki";
+                                } elseif ($data['alumni_data']['jenis_kelamin'] == '0'){
+                                    echo "perempuan";
+                                }
+                                ?></td>
                     </tr>
                     <tr>
                         <th>IPK</th>
