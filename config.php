@@ -1,6 +1,6 @@
 <?php
 
-define("PRODUCTION_STATE", true);
+define("PRODUCTION_STATE", false);
 
 define("inHTDOCS", true);
 

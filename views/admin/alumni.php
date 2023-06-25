@@ -32,7 +32,12 @@
                                 <td><?= $alumni['prodi'] ?></td>
                                 <td><?= $alumni['alamat'] ?></td>
                                 <td><?= $alumni['telp'] ?></td>
-                                <td><?= $alumni['jenis_kelamin'] == '1' ? "Laki Laki" : "Perempuan" ?></td>
+                                <td><?php if ($alumni['jenis_kelamin'] == '1' ) {
+                                    echo "Laki Laki";
+                                } elseif ($alumni['jenis_kelamin'] == '0'){
+                                    echo "perempuan";
+                                }
+                                ?></td>
                                 <td><?= $alumni['ipk'] ?></td>
                                 <td>
                                     <div class="modal fade" id="alumni-<?= $alumni_key ?>" tabindex="-1">
