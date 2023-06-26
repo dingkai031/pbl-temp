@@ -14,7 +14,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <tr><h1>Home Perusaaan</h1></tr>
+            <tr><h1>Home Perusahaan</h1></tr>
         </div>
         <table class="table">
             <tbody>
